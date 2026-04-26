@@ -1,0 +1,62 @@
+import { motion } from "framer-motion";
+
+const Hero = () => {
+  return (
+    <section className="relative h-screen flex items-center justify-center text-center px-6 pt-0 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 blur-2xl"></div>
+
+      <div className="relative z-10">
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-bold leading-tight tracking-tight"
+        >
+          I build systems.
+          <br />
+          <span className="text-primary">Not just websites.</span>
+        </motion.h1>
+
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-8 text-lg md:text-xl text-gray-400 max-w-xl mx-auto"
+        >
+          Full Stack Developer specializing in scalable applications,
+          performance, and real-world architecture.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-10 flex justify-center gap-4"
+        >
+          <button
+            onClick={() =>
+              document
+                .getElementById("projects")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className="px-6 py-3 bg-primary text-white rounded-lg shadow-lg hover:scale-105 transition"
+          >
+            View Projects
+          </button>
+
+          <a href="https://github.com/SAIRUSVARMA" target="_blank">
+            <button className="px-6 py-3 border border-gray-600 rounded-lg hover:border-primary hover:scale-105 transition">
+              GitHub
+            </button>
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
