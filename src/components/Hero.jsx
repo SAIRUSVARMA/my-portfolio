@@ -28,8 +28,8 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-8 text-lg md:text-xl text-gray-400 leading-relaxed"
         >
-          Full Stack Developer focused on building scalable applications, clean
-          architectures, and real-world systems.
+          Full Stack Developer focused on scalable systems, AI integration, and
+          real-world architecture.
         </motion.p>
 
         {/* Extra Line (Subtle Differentiator) */}

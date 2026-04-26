@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NetflixGPT = () => {
-  const navigate = useNavigate(); // ✅ ADD THIS
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -10,7 +10,7 @@ const NetflixGPT = () => {
 
   return (
     <div className="min-h-screen px-6 py-24 max-w-3xl mx-auto">
-      {/* 🔥 BACK BUTTON */}
+      {/* BACK BUTTON */}
       <button
         onClick={() => navigate("/")}
         className="mb-10 text-primary hover:underline"
@@ -23,10 +23,18 @@ const NetflixGPT = () => {
         Netflix GPT
       </h1>
 
+      {/* Description */}
       <p className="mt-6 text-gray-400 text-lg">
         AI-powered movie discovery platform integrating GPT with real-time TMDB
         data.
       </p>
+
+      {/* 🔥 IMAGE */}
+      <img
+        src="/images/netflixgpt.png"
+        alt="Netflix GPT"
+        className="rounded-lg mt-6 shadow-lg"
+      />
 
       {/* Sections */}
       <div className="mt-12 space-y-12">
