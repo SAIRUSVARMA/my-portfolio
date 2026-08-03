@@ -36,6 +36,12 @@ const journey = [
     desc: "Integrated GPT into applications",
     link: "https://github.com/SAIRUSVARMA/Netflix-Project",
   },
+  {
+    title: "Software Development Internship",
+    desc: "Built end-to-end MERN platforms (Dream Brain), AI video production, and collaborated at Kodryx AI",
+    link: "https://dreambrain-1.onrender.com/",
+    linkText: "View Live Work →",
+  },
 ];
 
 const Journey = () => {
@@ -71,7 +77,7 @@ const Journey = () => {
               rel="noreferrer"
               className="inline-block mt-3 text-primary text-sm hover:underline"
             >
-              View Project →
+              {item.linkText || "View Project →"}
             </a>
           </motion.div>
         ))}

@@ -23,6 +23,16 @@ const projects = [
     image: "/images/netflixgpt.png",
   },
   {
+    title: "Dream Brain",
+    desc: "Interactive personal assessment platform with guided workflows and progress tracking.",
+    tech: "React, Node.js, Express, MongoDB",
+    impact: "Provides smooth multi-step questionnaire flows with privacy-first data storage",
+    live: "https://dreambrain-1.onrender.com/",
+    github: "https://github.com/SAIRUSVARMA/DreamBrain",
+    case: "/dreambrain",
+    image: "/images/dreambrain.png",
+  },
+  {
     title: "YouTube Clone",
     desc: "Optimized video platform with debouncing, caching and live chat.",
     tech: "React, Redux",
@@ -58,32 +68,34 @@ const ProjectCard = ({ project }) => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
     viewport={{ once: true }}
-    className="bg-card p-7 md:p-8 rounded-2xl border border-gray-800 hover:border-primary hover:shadow-2xl hover:shadow-blue-500/20 transition duration-300"
+    className="bg-card p-7 md:p-8 rounded-2xl border border-gray-800 hover:border-primary hover:shadow-2xl hover:shadow-blue-500/20 transition duration-300 flex flex-col justify-between"
   >
-    {/* 🔥 IMAGE WITH ZOOM */}
-    <div className="overflow-hidden rounded-lg mb-5">
-      <img
-        src={project.image}
-        alt={project.title}
-        className="h-40 md:h-44 w-full object-cover transition duration-500 hover:scale-110"
-      />
+    <div>
+      {/* 🔥 IMAGE WITH ZOOM */}
+      <div className="overflow-hidden rounded-lg mb-5">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-40 md:h-44 w-full object-cover transition duration-500 hover:scale-110"
+        />
+      </div>
+
+      {/* TITLE */}
+      <h3 className="text-2xl font-bold text-primary text-center transition hover:scale-105">
+        {project.title}
+      </h3>
+
+      {/* DESC */}
+      <p className="text-gray-400 mt-4 leading-relaxed text-[15px] md:text-base text-center">
+        {project.desc}
+      </p>
+
+      {/* TECH */}
+      <p className="text-sm text-gray-500 mt-4 text-center">{project.tech}</p>
+
+      {/* IMPACT */}
+      <p className="text-xs text-primary mt-3 text-center">{project.impact}</p>
     </div>
-
-    {/* TITLE */}
-    <h3 className="text-2xl font-bold text-primary text-center transition hover:scale-105">
-      {project.title}
-    </h3>
-
-    {/* DESC */}
-    <p className="text-gray-400 mt-4 leading-relaxed text-[15px] md:text-base text-center">
-      {project.desc}
-    </p>
-
-    {/* TECH */}
-    <p className="text-sm text-gray-500 mt-4 text-center">{project.tech}</p>
-
-    {/* IMPACT */}
-    <p className="text-xs text-primary mt-3 text-center">{project.impact}</p>
 
     {/* BUTTONS */}
     <div className="flex justify-center gap-4 mt-6 flex-wrap">
@@ -120,20 +132,10 @@ const Projects = () => {
           Projects
         </h2>
 
-        <div className="max-w-6xl mx-auto space-y-10">
-          {/* ROW 1 */}
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            {projects.slice(0, 3).map((project, index) => (
+            {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-
-          {/* ROW 2 */}
-          <div className="flex justify-center gap-8">
-            {projects.slice(3, 5).map((project, index) => (
-              <div key={index} className="w-full md:w-[32%]">
-                <ProjectCard project={project} />
-              </div>
             ))}
           </div>
         </div>

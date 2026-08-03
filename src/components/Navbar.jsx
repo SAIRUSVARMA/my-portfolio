@@ -39,6 +39,13 @@ const Navbar = () => {
 
           <button
             className="hover:text-primary transition"
+            onClick={() => goToSection("experience")}
+          >
+            Experience
+          </button>
+
+          <button
+            className="hover:text-primary transition"
             onClick={() => goToSection("journey")}
           >
             Journey
@@ -62,6 +69,7 @@ const Navbar = () => {
       {open && (
         <div className="md:hidden bg-dark border-t border-gray-800 flex flex-col items-center py-4 gap-4">
           <button onClick={() => goToSection("projects")}>Projects</button>
+          <button onClick={() => goToSection("experience")}>Experience</button>
           <button onClick={() => goToSection("journey")}>Journey</button>
           <button onClick={() => goToSection("contact")}>Contact</button>
         </div>
